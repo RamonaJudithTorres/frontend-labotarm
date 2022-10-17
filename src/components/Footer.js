@@ -50,7 +50,7 @@ export default function LargeWithLogoLeft() {
           spacing={8}>
           <Stack color="blue.900" align={'flex-start'} fontSize='17px'>
             <Link  href={'https://www.facebook.com/labotarm'}>Facebook</Link>
-            <Link href={'#'}>Whatsapp: +52 871 138 4457</Link>
+            <Link href={'https://wa.me/528711384457'}>Whatsapp: +52 871 138 4457</Link>
             <Link href={'#'}>eldith6_@hotmail.com</Link>
             <Link href={'https://www.google.com/maps/place/Nevado+de+Toluca+10,+C%C3%A9sar+Guillermo+Meraz,+Cd+Lerdo,+Dgo./@25.5400262,-103.5056109,3a,90y,353.29h,80.73t/data=!3m6!1e1!3m4!1sh_dVl2g7nZ92W6gCvbsjaA!2e0!7i13312!8i6656!4m8!1m2!2m1!1sCalz.+Nevado+de+Toluca+No.+15+bis,+Ciudad+Lerdo,durango+Mexico!3m4!1s0x868fd8e4a4390181:0xe18c661865b05554!8m2!3d25.540038!4d-103.5036439'}>Calz. Nevado de Toluca No. 15 bis, Ciudad Lerdo, Mexico</Link>
           </Stack>
