@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 import Home from './views/Home';
 import Login from './views/Login';
 import Register from './views/Register';
@@ -9,6 +10,7 @@ import Patient from './views/Patient';
 import VerifyUser from './views/verifyUser';
 import Profile from './views/Profile';
 import Createpatient from './views/Createpatient';
+import Createanalisis from './views/Createanalisis';
 import Estudios from './views/Estudios';
 import AboutUs from './views/Aboutus'
 
@@ -28,8 +30,10 @@ function App() {
       <Route name="Profile" path='/profile' exact element={<Profile/>}/>  
       <Route name="About-us" path='/about_us' exact element={<AboutUs/>}/>  
       <Route name="Verify-user" path='/verify-user/' exact element={<VerifyUser/>}/>   
-      <Route name="Createpatient" path='/services' exact element={<Createpatient/>}/>
+      <Route name="Createpatient" path='/create_patient' exact element={<Createpatient/>}/>
+      <Route name="Createanalisis" path='/create_estudio' exact element={<Createanalisis/>}/>
     </Routes>
+    <ToastContainer position="bottom-right" autoClose={2000}/>
     </BrowserRouter>
   );
 }

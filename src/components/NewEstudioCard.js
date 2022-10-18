@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { formik, useField, useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { createPatient } from "../redux/patientSlice";
+import { createEstudio } from "../redux/analisisSlice";
 import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
@@ -20,30 +20,30 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-export default function NewPatientCard() {
+export default function NewEstudioCard() {
   const dispatch = useDispatch();
   const { isLogin, paciente} = useSelector(
     (state) => state.user
   );
   const navigate = useNavigate();
-  const notify = () => toast.success("Paciente creado con éxito");
+  const notify = () => toast.success("Estudio creado con éxito");
 
   const initialValues = {
     nombre: '',
-    edad: '',
-    telefono: '',
+    clave: '',
+    descripcion: '',
   };
   
   const onSubmit = (values) => {
     dispatch(
-      createPatient({
+      createEstudio({
         nombre: values.nombre,
-        edad: values.edad,
-        telefono: values.telefono,
+        clave: values.clave,
+        descripcion: values.descripcion,
       })
     );
     notify();
-    navigate('/patients');
+    navigate('/analisis');
   };
 
   const formik = useFormik({ initialValues, onSubmit });
@@ -58,7 +58,7 @@ export default function NewPatientCard() {
     >
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
-          <Heading fontSize={"4xl"}>Ingresar datos del Paciente</Heading>
+          <Heading fontSize={"4xl"}>Ingresar información del estudio</Heading>
         </Stack>
         <Box
           rounded={"lg"}
@@ -69,27 +69,27 @@ export default function NewPatientCard() {
           <Stack spacing={4}>
             <form onSubmit={formik.handleSubmit}>
               <FormControl id="nombre">
-                <FormLabel>Nombre del Paciente</FormLabel>
+                <FormLabel>Nombre del Estudio</FormLabel>
                 <Input
                   type="text"
                   onChange={formik.handleChange}
                   value={formik.values.nombre}
                 />
               </FormControl>
-              <FormControl id="edad">
-                <FormLabel>Edad</FormLabel>
-                <Input
-                  type="number"
-                  onChange={formik.handleChange}
-                  value={formik.values.edad}
-                />
-              </FormControl>
-              <FormControl id="telefono">
-                <FormLabel>telefono</FormLabel>
+              <FormControl id="clave">
+                <FormLabel>Clave</FormLabel>
                 <Input
                   type="text"
                   onChange={formik.handleChange}
-                  value={formik.values.telefono}
+                  value={formik.values.clave}
+                />
+              </FormControl>
+              <FormControl id="descripcion">
+                <FormLabel>Descripción</FormLabel>
+                <Input
+                  type="text"
+                  onChange={formik.handleChange}
+                  value={formik.values.descripcion}
                 />
               </FormControl>
               
@@ -109,7 +109,7 @@ export default function NewPatientCard() {
                     bg: "teal.600",
                   }}
                 >
-                  CREAR PACIENTE
+                  CREAR ESTUDIO
                 </Button>
               </Stack>
             </form>

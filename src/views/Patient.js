@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import {PatientTable} from '../components/PatientTable';
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPatients } from "../redux/patientSlice";
+import { useNavigate } from "react-router-dom";
+
 
 import {
   Grid, GridItem, useColorModeValue,
@@ -23,12 +25,19 @@ import {
   TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
+import { SmallAddIcon } from '@chakra-ui/icons';
 
 const Patient = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [pageNumber, setPageNumber] = useState(1);
   const [pageSize, setPageSize] = useState(12);
   const {listPatient} = useSelector((state) => state.paciente);
+
+ 
+  const createPatient = () => {
+    navigate('/create_patient')
+  }
 
   useEffect(()=>{
    
@@ -59,16 +68,15 @@ const Patient = () => {
     </GridItem>
 
     <GridItem pl='6'mx='6' area={'main'}>
-    
     <Box p="12">
-    <Heading size="md" as="h2">
+    <Flex h={16}  justifyContent={'space-between'}> 
+    <Heading size="md" as="h2" mx={"auto"}>
       Información de Pacientes
     </Heading>
-
+    <Button colorScheme='teal' size='sm' onClick={createPatient} > Agregar paciente <SmallAddIcon/></Button>
+    </Flex>
     <TableContainer>
   <Table variant='simple' >
-    <TableCaption>Imperial to metric conversion factors</TableCaption>
-
     <Thead>
       <Tr>
         <Th>Nombre</Th>
@@ -80,8 +88,11 @@ const Patient = () => {
     {listPatient&&
     <AllPatients/>}
   </Table>
+ 
 </TableContainer>
+
 </Box>
+
     </GridItem>
 
   </Grid>

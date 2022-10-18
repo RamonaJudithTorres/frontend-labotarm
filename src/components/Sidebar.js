@@ -44,11 +44,9 @@ interface LinkItemProps {
 
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Dashboard', icon: FiHome, path:'http://localhost:3000/dashboard' },
-  { name: 'Servicios', icon: FiTrendingUp, path:'http://localhost:3000/services'  },
-  { name: 'Pacientes', icon: FiCompass, path:'http://localhost:3000/patients'  },
-  { name: 'Estudios', icon: FiStar, path:'http://localhost:3000/analisis' },
-  { name: 'Settings', icon: FiSettings, path:'http://localhost:3000/'  },
+  { name: 'Servicios', icon: FiHome, path:'/dashboard' },
+  { name: 'Pacientes', icon: FiCompass, path:'/patients'  },
+  { name: 'Estudios', icon: FiStar, path:'/analisis' },
 ];
 
 export default function SidebarWithHeader({
@@ -69,7 +67,7 @@ export default function SidebarWithHeader({
         onClose={onClose}
         returnFocusOnClose={false}
         onOverlayClick={onClose}
-        size="full">
+        size="md">
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
@@ -95,7 +93,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       bg={useColorModeValue('white', 'gray.900')}
      
       w={{ base: 'full', md: 60 }}
-      pos="fixed"
+     
       h="full"
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
