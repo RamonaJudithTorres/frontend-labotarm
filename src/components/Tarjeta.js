@@ -42,8 +42,8 @@ export default function TarjetaHorizontal(value,key) {
           <Heading fontSize={'2xl'} fontFamily={'body'}>
           {value.value.nombre}
           </Heading>
-          <Text
-            textAlign={'center'}
+          <Text fontSize='lg' 
+            style={{textAlign: "justify", wordSpacing: "-3px",lineHeight: '110%', }}
             color={useColorModeValue('gray.700', 'gray.400')}
             px={3}>
             {value.value.descripcion}
@@ -51,5 +51,7 @@ export default function TarjetaHorizontal(value,key) {
         </Stack>
       </Stack>
     </Center>
+
+
   );
 }

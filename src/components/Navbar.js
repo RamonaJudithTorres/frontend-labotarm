@@ -23,7 +23,8 @@ import {
   Image,
   Input,
   InputGroup,
-  InputRightElement
+  InputRightElement,
+  Text,
 } from '@chakra-ui/react';
 
 import { HamburgerIcon, CloseIcon, ArrowForwardIcon, SmallAddIcon, } from '@chakra-ui/icons';
@@ -155,8 +156,8 @@ export default function Simple() {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-            <Link href='https://localhost:3000/estudios'color="blue.800" fontSize='17px' px={2} py={1} rounded={'md'}> Estudios</Link>
-<Link href='https://localhost:3000/about_us'color="blue.800" fontSize='17px'  px={2} py={1} rounded={'md'}> Acerca de Nosotros </Link>
+            <Link href='/estudios'color="blue.800" fontSize='17px' px={2} py={1} rounded={'md'}> Estudios</Link>
+<Link href='/about_us'color="blue.800" fontSize='17px'  px={2} py={1} rounded={'md'}> Acerca de Nosotros </Link>
             </Stack>
           </Box>
         ) : null}
