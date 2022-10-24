@@ -90,7 +90,7 @@ export function login ({email,password}){
     return async dispatch=>{
         dispatch(userSlice.actions.startLoading);
         try{
-            const response = await axios.post('http://127.0.0.1:8000/api/token/',{
+            const response = await axios.post('https://s8o2l4qbll.execute-api.us-east-1.amazonaws.com/dev/api/token/',{
                 username: email,
                 password })
             const {access,refresh} = response.data;
@@ -112,7 +112,7 @@ export function register ({user_email, password, password_confirm, firstName, la
     return async dispatch=>{
         dispatch(userSlice.actions.startLoading);
         try{
-            const response = await axios.post('http://127.0.0.1:8000/accounts/register/',{
+            const response = await axios.post('https://s8o2l4qbll.execute-api.us-east-1.amazonaws.com/dev/accounts/register/',{
                 email: user_email,
                 username: user,
                 password,
@@ -139,7 +139,7 @@ export function updateUser (dataForm){
     return async dispatch=>{
         dispatch(userSlice.actions.startLoading);
         try{
-            const response = await axios.post('http://127.0.0.1:8000/api/users/me',
+            const response = await axios.post('https://s8o2l4qbll.execute-api.us-east-1.amazonaws.com/dev/api/users/me',
             dataForm)
             const data = response.data;
 
@@ -173,7 +173,7 @@ export function getInitialize(){
         const refreshToken =window.localStorage.getItem('refreshToken');
 
         if (accessToken && isValidateToken(accessToken)){  
-           const response = await axios.get('http://127.0.0.1:8000/api/users/me', 
+           const response = await axios.get('https://s8o2l4qbll.execute-api.us-east-1.amazonaws.com/dev/api/users/me', 
            {contentType: 'application/json',
            headers: {'Authorization': `Bearer ${accessToken}`}
         });

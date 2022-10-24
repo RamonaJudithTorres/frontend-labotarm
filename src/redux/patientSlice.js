@@ -45,7 +45,7 @@ export function getAllPatients(page_number, page_size){
     return async dispatch => {
     dispatch(patientSlice.actions.startLoading);
     try{
-        const response= await axios.get(`http://127.0.0.1:8000/api/servicios/pacientes/all?page_number=${page_number}&page_size=${page_size}`);
+        const response= await axios.get(`https://s8o2l4qbll.execute-api.us-east-1.amazonaws.com/dev/api/servicios/pacientes/all?page_number=${page_number}&page_size=${page_size}`);
         const data =response.data;
         
         dispatch(patientSlice.actions.stopLoading);
@@ -65,7 +65,7 @@ export function createPatient ({nombre, edad, telefono}){
     return async dispatch=>{
         dispatch(patientSlice.actions.startLoading);
         try{
-            const response = await axios.post('http://127.0.0.1:8000/api/servicios/pacientes/create/',{
+            const response = await axios.post('https://s8o2l4qbll.execute-api.us-east-1.amazonaws.com/dev/api/servicios/pacientes/create/',{
                 nombre,
                 edad,
                 telefono,     

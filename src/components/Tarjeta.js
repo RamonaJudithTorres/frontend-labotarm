@@ -28,7 +28,7 @@ export default function TarjetaHorizontal(value,key) {
           <Image
             objectFit="cover"
             boxSize="100%"
-            src={`http://127.0.0.1:8000${value.value.imagen}`}
+            src={`https://s8o2l4qbll.execute-api.us-east-1.amazonaws.com/dev/${value.value.imagen}`}
             alt={`Picture of ${value.value.nombre}`}
           />
         </Flex>

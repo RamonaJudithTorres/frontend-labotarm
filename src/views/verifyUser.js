@@ -32,7 +32,7 @@ const validateAccount = () =>{
   let timestamp = query.timestamp;
   let signature = query.signature;
 
-    axios.post('http://127.0.0.1:8000/accounts/verify-registration/',
+    axios.post('https://s8o2l4qbll.execute-api.us-east-1.amazonaws.com/dev/accounts/verify-registration/',
     { user_id,
     timestamp,
     signature

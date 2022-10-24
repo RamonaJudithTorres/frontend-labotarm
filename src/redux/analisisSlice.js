@@ -43,7 +43,7 @@ export function getAllEstudios(page_number, page_size, nombre){
     return async dispatch => {
     dispatch(estudioSlice.actions.startLoading);
     try{
-        const response= await axios.get(`http://127.0.0.1:8000/api/servicios/estudios/all?page_number=${page_number}&page_size=${page_size}&nombre=${nombre}`);
+        const response= await axios.get(`https://s8o2l4qbll.execute-api.us-east-1.amazonaws.com/dev/api/servicios/estudios/all?page_number=${page_number}&page_size=${page_size}&nombre=${nombre}`);
         const data =response.data;
         
         dispatch(estudioSlice.actions.stopLoading);
@@ -64,7 +64,7 @@ export function createEstudio ({nombre, clave, descripcion}){
     return async dispatch=>{
         dispatch(estudioSlice.actions.startLoading);
         try{
-            const response = await axios.post('http://127.0.0.1:8000/api/servicios/estudios/create/',{
+            const response = await axios.post('https://s8o2l4qbll.execute-api.us-east-1.amazonaws.com/dev/api/servicios/estudios/create/',{
                 nombre,
                 clave,
                 descripcion,     

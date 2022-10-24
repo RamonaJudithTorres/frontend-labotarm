@@ -138,7 +138,7 @@ export default function Simple() {
                 <Avatar
                   size={'md'}
                   src={
-                    'http://localhost:8000/media/'+currentUser?.image_profile}
+                    'https://s8o2l4qbll.execute-api.us-east-1.amazonaws.com/dev/media/'+currentUser?.image_profile}
                 />
               </MenuButton>
               <MenuList>
