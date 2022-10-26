@@ -49,11 +49,12 @@ const Home =() =>{
 <Center> 
 
      <Box mx="auto"  m={[2, 3]}  p={[5, 6]}>
-      <Grid templateColumns='repeat(2, 1fr)' gap={6}>
+      {/* <Grid templateColumns='repeat(2, 1fr)' gap={6}> */}
+      <Flex flexWrap={"wrap"} gap="20" alignItems="center" justifyContent="center" flexDirection="row">
         {listTarjetas && 
         <AllCards />}
-         </Grid>
-         </Box>
+         </Flex>
+         </Box>   
          </Center>
          <Flex h={16}  > 
           <Heading size="md" as="h4" mx={"auto"}>

@@ -73,7 +73,7 @@ export default function SidebarWithHeader({
         </DrawerContent>
       </Drawer>
       {/* mobilenav */}
-      {/* <MobileNav onOpen={onOpen} /> */}
+      <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
       </Box>
@@ -144,28 +144,28 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   );
 };
 
-// interface MobileProps extends FlexProps {
-//   onOpen: () => void;
-// }
-// const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
-//   return (
-//     <Flex
-//       ml={{ base: 0, md: 60 }}
-//       px={{ base: 4, md: 4 }}
-//       height="20"
-//       alignItems="center"
-//       bg={useColorModeValue('white', 'gray.900')}
-//       borderBottomWidth="1px"
-//       borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
-//       justifyContent={{ base: 'space-between', md: 'flex-end' }}
-//       {...rest}>
-//       <IconButton
-//         display={{ base: 'flex', md: 'none' }}
-//         onClick={onOpen}
-//         variant="outline"
-//         aria-label="open menu"
-//         icon={<FiMenu />}
-//       />
-//     </Flex>
-//   );
-// };
+interface MobileProps extends FlexProps {
+  onOpen: () => void;
+}
+const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+  return (
+    <Flex
+      ml={{ base: 0, md: 60 }}
+      px={{ base: 4, md: 4 }}
+      height="20"
+      alignItems="center"
+      bg={useColorModeValue('white', 'gray.900')}
+      borderBottomWidth="1px"
+      borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
+      justifyContent={{ base: 'space-between', md: 'flex-end' }}
+      {...rest}>
+      <IconButton
+        display={{ base: 'flex', md: 'none' }}
+        onClick={onOpen}
+        variant="outline"
+        aria-label="open menu"
+        icon={<FiMenu />}
+      />
+    </Flex>
+  );
+};

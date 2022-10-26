@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
+import Simple from "../components/NavDash";
 import {ServicesTable} from '../components/ServicesTable';
 import { Grid, GridItem, useColorModeValue,  Table, 
   Box,
@@ -59,7 +59,7 @@ const Login = () => {
   
 >
   <GridItem  pb={4}  area={'header'}>
-  <Header/>
+  <Simple/>
   </GridItem>
   
   <GridItem pl='2'pt={9} area={'nav'}>

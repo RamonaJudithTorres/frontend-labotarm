@@ -87,13 +87,6 @@ export default function Simple() {
     <>
       <Box bg={useColorModeValue('white.100', 'white.900')} px={6} pt={14} pb={4}  >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <IconButton
-            size={'md'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
-            onClick={isOpen ? onClose : onOpen}
-          />
           <HStack spacing={8} alignItems={'center'}>
             <Box>
             <Link>
@@ -103,8 +96,7 @@ export default function Simple() {
             <HStack
               as={'nav'}
               spacing={4}
-              display={{ base: 'none', md: 'flex' }}>
-             
+              display={{ base: 'flex', md: 'flex' }}> 
                 <NavLink > 
 <Link href='/estudios'color="blue.800" fontSize='17px' px={2} py={1} rounded={'md'}_hover={{textDecoration: 'none',
       bg: useColorModeValue('blue.100', 'blue.700'), }} >Estudios</Link>
@@ -117,12 +109,6 @@ export default function Simple() {
 
           </HStack>
           <Flex alignItems={'center'}>
-            {!isLogin &&
-            <Stack direction='row' spacing={4}>
-            <Button colorScheme='teal' size='sm' onClick={loginUser}>  Iniciar Sesión <ArrowForwardIcon/> </Button>
-            <Button colorScheme='teal' size='sm' variant='outline' onClick={createUser}>  Crear cuenta <SmallAddIcon/></Button>
-            </Stack>
-            }
             {(isLogin && currentUser) &&
             <Menu>
               <Box mr={"30px"} color="blue.900"> {currentUser?.user?.username} </Box>
@@ -150,15 +136,6 @@ export default function Simple() {
             }
           </Flex>
         </Flex>
-
-        {isOpen ? (
-          <Box pb={4} display={{ md: 'none' }}>
-            <Stack as={'nav'} spacing={4}>
-            <Link href='/estudios'color="blue.800" fontSize='17px' px={2} py={1} rounded={'md'}> Estudios</Link>
-<Link href='/about_us'color="blue.800" fontSize='17px'  px={2} py={1} rounded={'md'}> Acerca de Nosotros </Link>
-            </Stack>
-          </Box>
-        ) : null}
       </Box>
 
     </>
